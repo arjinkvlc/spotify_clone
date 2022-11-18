@@ -72,10 +72,132 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Center(
           child: Container(
-        height: 695,
-        width: 500,
-        color: Colors.black87,
-        child: Column(
+              height: 695,
+              width: 500,
+              color: Colors.black87,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 5,top: 5),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        TextButton.icon(
+                            onPressed: () {},
+                            icon: Image.network(
+                              'https://pbs.twimg.com/media/EvtwC5fWYAEjamW.jpg',
+                              height: 50,
+                              width: 50,
+                            ),
+                            label: Container(
+                              width: 115,
+                              height: 50,
+                              alignment: Alignment.centerLeft,
+                              color: Colors.white12,
+                              child: Text("NKVT",
+                              textAlign: TextAlign.left,
+                              style: TextStyle(color:Colors.white),
+                              ),
+                            )),
+                        TextButton.icon(
+                            onPressed: () {},
+                            icon: Image.network(
+                              'https://dailymix-images.scdn.co/v2/img/ab6761610000e5eba00b11c129b27a88fc72f36b/3/en/large',
+                              height: 50,
+                              width: 50,
+                            ),
+                            label: Container(
+                              width: 115,
+                              height: 50,
+                              alignment: Alignment.centerLeft,
+                              color: Colors.white12,
+                              child: Text("Daily Mix",
+                                textAlign: TextAlign.left,
+                                style: TextStyle(color:Colors.white),
+                              ),
+                            )),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        TextButton.icon(
+                            onPressed: () {},
+                            icon: Image.network(
+                              'https://newjams-images.scdn.co/image/ab6764780000c480/dt/v3/release-radar/ab6761610000e5ebed9ed4f6ed4b2fe64a67efa7/en',
+                              height: 50,
+                              width: 50,
+                            ),
+                            label: Container(
+                              width: 115,
+                              height: 50,
+                              alignment: Alignment.centerLeft,
+                              color: Colors.white12,
+                              child: Text("Release Radar",
+                                textAlign: TextAlign.left,
+                                style: TextStyle(color:Colors.white),
+                              ),
+                            )),
+                        TextButton.icon(
+                            onPressed: () {},
+                            icon: Image.network(
+                              'https://i.scdn.co/image/ab67706f00000003d971c6c23114fc7636dc23eb',
+                              height: 50,
+                              width: 50,
+                            ),
+                            label: Container(
+                              width: 115,
+                              height: 50,
+                              alignment: Alignment.centerLeft,
+                              color: Colors.white12,
+                              child: Text("Viral Hits",
+                                textAlign: TextAlign.left,
+                                style: TextStyle(color:Colors.white),
+                              ),
+                            )),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        TextButton.icon(
+                            onPressed: () {},
+                            icon: Image.network(
+                              'https://i.scdn.co/image/ab67706c0000bebbdcb3302d19235448f0cbfbfb',
+                              height: 50,
+                              width: 50,
+                            ),
+                            label: Container(
+                              width: 115,
+                              height: 50,
+                              alignment: Alignment.centerLeft,
+                              color: Colors.white12,
+                              child: Text("Top Hits",
+                                textAlign: TextAlign.left,
+                                style: TextStyle(color:Colors.white),
+                              ),
+                            )),
+                        TextButton.icon(
+                            onPressed: () {},
+                            icon: Image.network(
+                              'https://charts-images.scdn.co/assets/locale_en/regional/daily/region_global_large.jpg',
+                              height: 50,
+                              width: 50,
+                            ),
+                            label: Container(
+                              width: 115,
+                              height: 50,
+                              alignment: Alignment.centerLeft,
+                              color: Colors.white12,
+                              child: Text("Top 50 Global",
+                                textAlign: TextAlign.left,
+                                style: TextStyle(color:Colors.white),
+                              ),
+                            )),
+                      ],
+                    )
+                  ],
+                ),
+              )
+
+              /* child: Column(
           children: [
             Row(
               children:[
@@ -182,8 +304,9 @@ class _HomePageState extends State<HomePage> {
         ],
         )
           ],
-        ),
-      )),
+        ),*/
+
+              )),
       bottomNavigationBar: BottomNavigationBar(
           unselectedItemColor: Colors.white30,
           selectedItemColor: Colors.white,
@@ -201,7 +324,7 @@ class _HomePageState extends State<HomePage> {
                 activeIcon: Icon(Icons.home)),
             BottomNavigationBarItem(
                 icon: Icon(Icons.bookmarks_sharp),
-                label: "Profil",
+                label: "Kitaplığın",
                 activeIcon: Icon(Icons.home))
           ]),
     );
