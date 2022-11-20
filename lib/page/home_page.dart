@@ -9,10 +9,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,55 +16,67 @@ class _HomePageState extends State<HomePage> {
       extendBody: true,
       appBar: AppBar(
         backgroundColor: Colors.black87,
-        title: Text("İyi günler"),
-        actions: const [
+        title: const Text("İyi günler"),
+        actions: [
           Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Icon(Icons.notifications_none),
-          ),
+              padding: const EdgeInsets.all(8.0),
+              child: IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.notifications_none),
+                padding: EdgeInsets.zero,
+                constraints: const BoxConstraints(),
+              )),
           Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Icon(Icons.update),
-          ),
+              padding: const EdgeInsets.all(8.0),
+              child: IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.update),
+                padding: EdgeInsets.zero,
+                constraints: const BoxConstraints(),
+              )),
           Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Icon(Icons.settings),
-          )
+              padding: const EdgeInsets.all(8.0),
+              child: IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.settings),
+                padding: EdgeInsets.zero,
+                constraints: const BoxConstraints(),
+              ))
         ],
         bottom: PreferredSize(
+          preferredSize: const Size(400, 50),
           child: Row(
             children: [
               Padding(
                 padding: const EdgeInsets.only(left: 10, right: 10),
                 child: ElevatedButton(
                     onPressed: () {},
-                    child: Text("Müzik"),
                     style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStatePropertyAll<Color>(Colors.white30),
+                        backgroundColor: const MaterialStatePropertyAll<Color>(
+                            Colors.white30),
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18.0),
-                        )))),
+                        ))),
+                    child: const Text("Müzik")),
               ),
               Padding(
                 padding: const EdgeInsets.only(bottom: 1),
                 child: ElevatedButton(
                     onPressed: () {},
-                    child: Text("Podcast'ler ve Programlar"),
                     style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStatePropertyAll<Color>(Colors.white30),
+                        backgroundColor: const MaterialStatePropertyAll<Color>(
+                            Colors.white30),
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18.0),
-                        )))),
+                        ))),
+                    child: const Text("Podcast'ler ve Programlar")),
               ),
             ],
           ),
-          preferredSize: Size(400, 50),
         ),
       ),
       body: Container(
@@ -82,9 +90,13 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   children: [
                     TextButton.icon(
+                        style: ButtonStyle(
+                          overlayColor: MaterialStateColor.resolveWith(
+                              (states) => Colors.black.withOpacity(0.3)),
+                        ),
                         onPressed: () {},
-                        icon: Image.network(
-                          'https://pbs.twimg.com/media/EvtwC5fWYAEjamW.jpg',
+                        icon: Image.asset(
+                          'assets/images/nkvt.jpg',
                           height: 50,
                           width: 50,
                         ),
@@ -93,16 +105,20 @@ class _HomePageState extends State<HomePage> {
                           height: 50,
                           alignment: Alignment.centerLeft,
                           color: Colors.white12,
-                          child: Text(
+                          child: const Text(
                             "NKVT",
                             textAlign: TextAlign.left,
                             style: TextStyle(color: Colors.white),
                           ),
                         )),
                     TextButton.icon(
+                        style: ButtonStyle(
+                          overlayColor: MaterialStateColor.resolveWith(
+                                  (states) => Colors.black.withOpacity(0.3)),
+                        ),
                         onPressed: () {},
-                        icon: Image.network(
-                          'https://dailymix-images.scdn.co/v2/img/ab6761610000e5eba00b11c129b27a88fc72f36b/3/en/large',
+                        icon: Image.asset(
+                          'assets/images/large.jpg',
                           height: 50,
                           width: 50,
                         ),
@@ -111,7 +127,7 @@ class _HomePageState extends State<HomePage> {
                           height: 50,
                           alignment: Alignment.centerLeft,
                           color: Colors.white12,
-                          child: Text(
+                          child: const Text(
                             "Daily Mix",
                             textAlign: TextAlign.left,
                             style: TextStyle(color: Colors.white),
@@ -122,9 +138,13 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   children: [
                     TextButton.icon(
+                        style: ButtonStyle(
+                          overlayColor: MaterialStateColor.resolveWith(
+                                  (states) => Colors.black.withOpacity(0.3)),
+                        ),
                         onPressed: () {},
-                        icon: Image.network(
-                          'https://newjams-images.scdn.co/image/ab6764780000c480/dt/v3/release-radar/ab6761610000e5ebed9ed4f6ed4b2fe64a67efa7/en',
+                        icon: Image.asset(
+                          'assets/images/release.jpg',
                           height: 50,
                           width: 50,
                         ),
@@ -133,16 +153,20 @@ class _HomePageState extends State<HomePage> {
                           height: 50,
                           alignment: Alignment.centerLeft,
                           color: Colors.white12,
-                          child: Text(
+                          child: const Text(
                             "Release Radar",
                             textAlign: TextAlign.left,
                             style: TextStyle(color: Colors.white),
                           ),
                         )),
                     TextButton.icon(
+                        style: ButtonStyle(
+                          overlayColor: MaterialStateColor.resolveWith(
+                                  (states) => Colors.black.withOpacity(0.3)),
+                        ),
                         onPressed: () {},
-                        icon: Image.network(
-                          'https://i.scdn.co/image/ab67706f00000003d971c6c23114fc7636dc23eb',
+                        icon: Image.asset(
+                          'assets/images/viral.jpg',
                           height: 50,
                           width: 50,
                         ),
@@ -151,7 +175,7 @@ class _HomePageState extends State<HomePage> {
                           height: 50,
                           alignment: Alignment.centerLeft,
                           color: Colors.white12,
-                          child: Text(
+                          child: const Text(
                             "Viral Hits",
                             textAlign: TextAlign.left,
                             style: TextStyle(color: Colors.white),
@@ -162,9 +186,13 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   children: [
                     TextButton.icon(
+                        style: ButtonStyle(
+                          overlayColor: MaterialStateColor.resolveWith(
+                                  (states) => Colors.black.withOpacity(0.3)),
+                        ),
                         onPressed: () {},
-                        icon: Image.network(
-                          'https://i.scdn.co/image/ab67706c0000bebbdcb3302d19235448f0cbfbfb',
+                        icon: Image.asset(
+                          'assets/images/top-hits.jpg',
                           height: 50,
                           width: 50,
                         ),
@@ -173,16 +201,20 @@ class _HomePageState extends State<HomePage> {
                           height: 50,
                           alignment: Alignment.centerLeft,
                           color: Colors.white12,
-                          child: Text(
+                          child: const Text(
                             "Top Hits",
                             textAlign: TextAlign.left,
                             style: TextStyle(color: Colors.white),
                           ),
                         )),
                     TextButton.icon(
+                        style: ButtonStyle(
+                          overlayColor: MaterialStateColor.resolveWith(
+                                  (states) => Colors.black.withOpacity(0.3)),
+                        ),
                         onPressed: () {},
-                        icon: Image.network(
-                          'https://charts-images.scdn.co/assets/locale_en/regional/daily/region_global_large.jpg',
+                        icon: Image.asset(
+                          'assets/images/region_global_large.jpg',
                           height: 50,
                           width: 50,
                         ),
@@ -191,7 +223,7 @@ class _HomePageState extends State<HomePage> {
                           height: 50,
                           alignment: Alignment.centerLeft,
                           color: Colors.white12,
-                          child: Text(
+                          child: const Text(
                             "Top 50 Global",
                             textAlign: TextAlign.left,
                             style: TextStyle(color: Colors.white),
@@ -209,74 +241,124 @@ class _HomePageState extends State<HomePage> {
                         fontWeight: FontWeight.bold,
                       )),
                 ),
-                Container(
+                SizedBox(
                   height: 180,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: <Widget>[
-                      Container(
+                      SizedBox(
                         width: 160,
                         height: 160,
                         child: Column(
                           children: [
-                            TextButton.icon(onPressed: (){},label:Text("") ,icon: Image.network('https://seed-mix-image.spotifycdn.com/v6/img/pop/6KImCVD70vtIoJWnq6nGn3/en/large',
-                              height: 130,
-                              width: 130,
-                            ),),
-                            Text("Murat Boz,Derya Uluğ ve daha fazlası",style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.white30,
-                              fontWeight: FontWeight.bold,
-                            ),)
+                            TextButton.icon(
+                              style: ButtonStyle(
+                                overlayColor: MaterialStateColor.resolveWith(
+                                        (states) => Colors.grey.withOpacity(0.2)),
+                              ),
+                              onPressed: () {},
+                              label: const Text(""),
+                              icon: Image.asset(
+                                'assets/images/pop-mix.jpg',
+                                height: 130,
+                                width: 130,
+                              ),
+                            ),
+                            const Text(
+                              "Murat Boz,Derya Uluğ ve daha fazlası",
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.white30,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )
                           ],
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         width: 160,
                         height: 160,
                         child: Column(
                           children: [
-                            TextButton.icon(onPressed: (){},label:Text("") ,icon: Image.network('https://seed-mix-image.spotifycdn.com/v6/img/artist/7dGJo4pcD2V6oG8kP0tJRR/en/large',
-                              height: 130,
-                              width: 130,
-                            ),),
-                            Text("DMX,Bad Meets Evil,D12 ve daha fazlası",style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.white30,
-                              fontWeight: FontWeight.bold,
-                            ),)
+                            TextButton.icon(
+                              style: ButtonStyle(
+                                overlayColor: MaterialStateColor.resolveWith(
+                                        (states) => Colors.grey.withOpacity(0.2)),
+                              ),
+                              onPressed: () {},
+                              label: const Text(""),
+                              icon: Image.asset(
+                                'assets/images/eminem-mix.jpg',
+                                height: 130,
+                                width: 130,
+                              ),
+                            ),
+                            const Text(
+                              "DMX,Bad Meets Evil,D12 ve daha fazlası",
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.white30,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )
                           ],
                         ),
-                      ),Container(
+                      ),
+                      SizedBox(
                         width: 160,
                         height: 160,
                         child: Column(
                           children: [
-                            TextButton.icon(onPressed: (){},label:Text("") ,icon: Image.network('https://i.scdn.co/image/ab67616d0000b27363dcefae395de2e18cf2b932',
-                              height: 130,
-                              width: 130,
-                            ),),
-                            Text("Metallica,Nirvana ve daha fazlası",style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.white30,
-                              fontWeight: FontWeight.bold,
-                            ),)
+                            TextButton.icon(
+                              style: ButtonStyle(
+                                overlayColor: MaterialStateColor.resolveWith(
+                                        (states) => Colors.grey.withOpacity(0.2)),
+                              ),
+                              onPressed: () {},
+                              label: const Text(""),
+                              icon: Image.asset(
+                                'assets/images/rock-mix.jpg',
+                                height: 130,
+                                width: 130,
+                              ),
+                            ),
+                            const Text(
+                              "Metallica,Nirvana ve daha fazlası",
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.white30,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )
                           ],
                         ),
-                      ),Container(
+                      ),
+                      SizedBox(
                         width: 160,
                         height: 160,
                         child: Column(
                           children: [
-                            TextButton.icon(onPressed: (){},label:Text("") ,icon: Image.network('https://seed-mix-image.spotifycdn.com/v6/img/hip_hop/2Dor6diK1zw9BEluKBOdoA/en/large',
-                              height: 130,
-                              width: 130,
-                            ),),
-                            Text("Joker,Tepki,Ceza ve daha fazlası",style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.white30,
-                              fontWeight: FontWeight.bold,
-                            ),)
+                            TextButton.icon(
+                              style: ButtonStyle(
+                                overlayColor: MaterialStateColor.resolveWith(
+                                        (states) => Colors.grey.withOpacity(0.2)),
+                              ),
+                              onPressed: () {},
+                              label: const Text(""),
+                              icon: Image.asset(
+                                'assets/images/hiphop-mix.jpg',
+                                height: 130,
+                                width: 130,
+                              ),
+                            ),
+                            const Text(
+                              "Joker,Tepki,Ceza ve daha fazlası",
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.white30,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )
                           ],
                         ),
                       ),
@@ -293,74 +375,124 @@ class _HomePageState extends State<HomePage> {
                         fontWeight: FontWeight.bold,
                       )),
                 ),
-                Container(
+                SizedBox(
                   height: 180,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: <Widget>[
-                      Container(
+                      SizedBox(
                         width: 160,
                         height: 160,
                         child: Column(
                           children: [
-                            TextButton.icon(onPressed: (){},label:Text("") ,icon: Image.network('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh323-vOc7dQyPtWUmg5SYmK3LuUhOJ86UH9Xz7ePwmv1PX-Ge9TcvMpBsEK1wwOqtsFQdyV4nA2PTmQ8ZoXerG1f24QfH55RYqcneKEv4MlRI1dGtIbR7MzbLmVBlRv2tRUpnqVsbwnvj7xMwtO_6A9qNDB2tp_37RUxNe9WLr939b1fTgBjbfI9Cb/s640/yeni_muzik_radari-haziran-2022.jpg',
-                              height: 130,
-                              width: 130,
-                            ),),
-                            Text("Takip ettiğin sanatçıların en son müziklerinin hepsi...",style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.white30,
-                              fontWeight: FontWeight.bold,
-                            ),)
+                            TextButton.icon(
+                              style: ButtonStyle(
+                                overlayColor: MaterialStateColor.resolveWith(
+                                        (states) => Colors.grey.withOpacity(0.2)),
+                              ),
+                              onPressed: () {},
+                              label: const Text(""),
+                              icon: Image.asset(
+                                'assets/images/radar.jpg',
+                                height: 130,
+                                width: 130,
+                              ),
+                            ),
+                            const Text(
+                              "Takip ettiğin sanatçıların en son müziklerinin hepsi...",
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.white30,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )
                           ],
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         width: 160,
                         height: 160,
                         child: Column(
                           children: [
-                            TextButton.icon(onPressed: (){},label:Text("") ,icon: Image.network('https://i.scdn.co/image/ab67616d0000b273dc5c2b466114a99eb4bdf13e',
-                              height: 130,
-                              width: 130,
-                            ),),
-                            Text("Single·Motive",style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.white30,
-                              fontWeight: FontWeight.bold,
-                            ),)
+                            TextButton.icon(
+                              style: ButtonStyle(
+                                overlayColor: MaterialStateColor.resolveWith(
+                                        (states) => Colors.grey.withOpacity(0.2)),
+                              ),
+                              onPressed: () {},
+                              label: const Text(""),
+                              icon: Image.asset(
+                                'assets/images/10mg.jpg',
+                                height: 130,
+                                width: 130,
+                              ),
+                            ),
+                            const Text(
+                              "Single·Motive",
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.white30,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )
                           ],
                         ),
-                      ),Container(
+                      ),
+                      SizedBox(
                         width: 160,
                         height: 160,
                         child: Column(
                           children: [
-                            TextButton.icon(onPressed: (){},label:Text("") ,icon: Image.network('https://i.scdn.co/image/ab67616d0000b27319dcc68c1778a0199eeef51e',
-                              height: 130,
-                              width: 130,
-                            ),),
-                            Text("Single·Allame,Aspova",style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.white30,
-                              fontWeight: FontWeight.bold,
-                            ),)
+                            TextButton.icon(
+                              style: ButtonStyle(
+                                overlayColor: MaterialStateColor.resolveWith(
+                                        (states) => Colors.grey.withOpacity(0.2)),
+                              ),
+                              onPressed: () {},
+                              label: const Text(""),
+                              icon: Image.asset(
+                                'assets/images/fil-inadi.jpg',
+                                height: 130,
+                                width: 130,
+                              ),
+                            ),
+                            const Text(
+                              "Single·Allame,Aspova",
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.white30,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )
                           ],
                         ),
-                      ),Container(
+                      ),
+                      SizedBox(
                         width: 160,
                         height: 160,
                         child: Column(
                           children: [
-                            TextButton.icon(onPressed: (){},label:Text("") ,icon: Image.network('https://i.scdn.co/image/ab67616d0000b2731a8c2bafc15be30ee745eb8d',
-                              height: 130,
-                              width: 130,
-                            ),),
-                            Text("Single·Defkhan,Sagopa Kajmer",style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.white30,
-                              fontWeight: FontWeight.bold,
-                            ),)
+                            TextButton.icon(
+                              style: ButtonStyle(
+                                overlayColor: MaterialStateColor.resolveWith(
+                                        (states) => Colors.grey.withOpacity(0.2)),
+                              ),
+                              onPressed: () {},
+                              label: const Text(""),
+                              icon: Image.asset(
+                                'assets/images/sago.jpg',
+                                height: 130,
+                                width: 130,
+                              ),
+                            ),
+                            const Text(
+                              "Single·Defkhan,Sagopa Kajmer",
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.white30,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )
                           ],
                         ),
                       ),
@@ -377,82 +509,135 @@ class _HomePageState extends State<HomePage> {
                         fontWeight: FontWeight.bold,
                       )),
                 ),
-                Container(
+                SizedBox(
                   height: 180,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: <Widget>[
-                      Container(
+                      SizedBox(
                         width: 160,
                         height: 160,
                         child: Column(
                           children: [
-                            TextButton.icon(onPressed: (){},label:Text("") ,icon: ClipRRect(borderRadius: BorderRadius.circular(130.0),
-                              child:Image.network('https://i.scdn.co/image/ab67706c0000bebb6aba6232e1bbeb763d19cba7',
-                                height: 130,
-                                width: 130,
-
-                              ),)),
-                            Text("Motive",style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),)
+                            TextButton.icon(
+                                style: ButtonStyle(
+                                  overlayColor: MaterialStateColor.resolveWith(
+                                          (states) => Colors.grey.withOpacity(0.2)),
+                                ),
+                                onPressed: () {},
+                                label: const Text(""),
+                                icon: ClipRRect(
+                                  borderRadius: BorderRadius.circular(130.0),
+                                  child: Image.asset(
+                                    'assets/images/moti.jpg',
+                                    height: 130,
+                                    width: 130,
+                                  ),
+                                )),
+                            const Text(
+                              "Motive",
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )
                           ],
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         width: 160,
                         height: 160,
                         child: Column(
                           children: [
-                            TextButton.icon(onPressed: (){},label:Text("") ,icon: ClipRRect(borderRadius: BorderRadius.circular(150.0),
-                              child:Image.network('https://i.scdn.co/image/ab6761610000e5ebc7bb8481d97599dbab344a65',
-                                height: 130,
-                                width: 130,
-
-                              ),),),
-                            Text("Hidra",style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),)
+                            TextButton.icon(
+                              style: ButtonStyle(
+                                overlayColor: MaterialStateColor.resolveWith(
+                                        (states) => Colors.grey.withOpacity(0.2)),
+                              ),
+                              onPressed: () {},
+                              label: const Text(""),
+                              icon: ClipRRect(
+                                borderRadius: BorderRadius.circular(150.0),
+                                child: Image.asset(
+                                  'assets/images/hidra.jpg',
+                                  height: 130,
+                                  width: 130,
+                                ),
+                              ),
+                            ),
+                            const Text(
+                              "Hidra",
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )
                           ],
                         ),
-                      ),Container(
+                      ),
+                      SizedBox(
                         width: 160,
                         height: 160,
                         child: Column(
                           children: [
-                            TextButton.icon(onPressed: (){},label:Text("") ,icon: ClipRRect(borderRadius: BorderRadius.circular(150.0),
-                              child:Image.network('https://i.scdn.co/image/ab6761610000e5eb7156c4ba478e41acdec935a5',
-                                height: 130,
-                                width: 130,
-
-                              ),),),
-                            Text("Allame",style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),)
+                            TextButton.icon(
+                              style: ButtonStyle(
+                                overlayColor: MaterialStateColor.resolveWith(
+                                        (states) => Colors.grey.withOpacity(0.2)),
+                              ),
+                              onPressed: () {},
+                              label: const Text(""),
+                              icon: ClipRRect(
+                                borderRadius: BorderRadius.circular(150.0),
+                                child: Image.asset(
+                                  'assets/images/allame.jpg',
+                                  height: 130,
+                                  width: 130,
+                                ),
+                              ),
+                            ),
+                            const Text(
+                              "Allame",
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )
                           ],
                         ),
-                      ),Container(
+                      ),
+                      SizedBox(
                         width: 160,
                         height: 160,
                         child: Column(
                           children: [
-                            TextButton.icon(onPressed: (){},label:Text("") ,icon: ClipRRect(borderRadius: BorderRadius.circular(150.0),
-                              child:Image.network('https://i.scdn.co/image/ab6761610000e5eb966d3501bcd640ce98937f56',
-                                height: 130,
-                                width: 130,
-
-                              ),),),
-                            Text("Ceg",style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),)
+                            TextButton.icon(
+                              style: ButtonStyle(
+                                overlayColor: MaterialStateColor.resolveWith(
+                                        (states) => Colors.grey.withOpacity(0.2)),
+                              ),
+                              onPressed: () {},
+                              label: const Text(""),
+                              icon: ClipRRect(
+                                borderRadius: BorderRadius.circular(150.0),
+                                child: Image.asset(
+                                  'assets/images/ceg.jpg',
+                                  height: 130,
+                                  width: 130,
+                                ),
+                              ),
+                            ),
+                            const Text(
+                              "Ceg",
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            )
                           ],
                         ),
                       ),
@@ -461,10 +646,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
-          )
-
-
-          ),
+          )),
       bottomNavigationBar: BottomNavigationBar(
           unselectedItemColor: Colors.white30.withOpacity(0.4),
           selectedItemColor: Colors.white,
