@@ -17,6 +17,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       appBar: AppBar(
         backgroundColor: Colors.black87,
         title: Text("İyi günler"),
@@ -76,7 +77,7 @@ class _HomePageState extends State<HomePage> {
           color: Colors.black87,
           child: Padding(
             padding: const EdgeInsets.only(left: 5, top: 5),
-            child: Column(
+            child: ListView(
               children: [
                 Row(
                   children: [
@@ -282,8 +283,182 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
+                const Padding(
+                  padding: EdgeInsets.only(right: 110, top: 20),
+                  child: Text("Yeni çıkanlar,senin için",
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      )),
+                ),
+                Container(
+                  height: 180,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: <Widget>[
+                      Container(
+                        width: 160,
+                        height: 160,
+                        child: Column(
+                          children: [
+                            TextButton.icon(onPressed: (){},label:Text("") ,icon: Image.network('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh323-vOc7dQyPtWUmg5SYmK3LuUhOJ86UH9Xz7ePwmv1PX-Ge9TcvMpBsEK1wwOqtsFQdyV4nA2PTmQ8ZoXerG1f24QfH55RYqcneKEv4MlRI1dGtIbR7MzbLmVBlRv2tRUpnqVsbwnvj7xMwtO_6A9qNDB2tp_37RUxNe9WLr939b1fTgBjbfI9Cb/s640/yeni_muzik_radari-haziran-2022.jpg',
+                              height: 130,
+                              width: 130,
+                            ),),
+                            Text("Takip ettiğin sanatçıların en son müziklerinin hepsi...",style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.white30,
+                              fontWeight: FontWeight.bold,
+                            ),)
+                          ],
+                        ),
+                      ),
+                      Container(
+                        width: 160,
+                        height: 160,
+                        child: Column(
+                          children: [
+                            TextButton.icon(onPressed: (){},label:Text("") ,icon: Image.network('https://i.scdn.co/image/ab67616d0000b273dc5c2b466114a99eb4bdf13e',
+                              height: 130,
+                              width: 130,
+                            ),),
+                            Text("Single·Motive",style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.white30,
+                              fontWeight: FontWeight.bold,
+                            ),)
+                          ],
+                        ),
+                      ),Container(
+                        width: 160,
+                        height: 160,
+                        child: Column(
+                          children: [
+                            TextButton.icon(onPressed: (){},label:Text("") ,icon: Image.network('https://i.scdn.co/image/ab67616d0000b27319dcc68c1778a0199eeef51e',
+                              height: 130,
+                              width: 130,
+                            ),),
+                            Text("Single·Allame,Aspova",style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.white30,
+                              fontWeight: FontWeight.bold,
+                            ),)
+                          ],
+                        ),
+                      ),Container(
+                        width: 160,
+                        height: 160,
+                        child: Column(
+                          children: [
+                            TextButton.icon(onPressed: (){},label:Text("") ,icon: Image.network('https://i.scdn.co/image/ab67616d0000b2731a8c2bafc15be30ee745eb8d',
+                              height: 130,
+                              width: 130,
+                            ),),
+                            Text("Single·Defkhan,Sagopa Kajmer",style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.white30,
+                              fontWeight: FontWeight.bold,
+                            ),)
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(right: 110, top: 20),
+                  child: Text("Popüler Sanatçılar",
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      )),
+                ),
+                Container(
+                  height: 180,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: <Widget>[
+                      Container(
+                        width: 160,
+                        height: 160,
+                        child: Column(
+                          children: [
+                            TextButton.icon(onPressed: (){},label:Text("") ,icon: ClipRRect(borderRadius: BorderRadius.circular(130.0),
+                              child:Image.network('https://i.scdn.co/image/ab67706c0000bebb6aba6232e1bbeb763d19cba7',
+                                height: 130,
+                                width: 130,
 
+                              ),)),
+                            Text("Motive",style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),)
+                          ],
+                        ),
+                      ),
+                      Container(
+                        width: 160,
+                        height: 160,
+                        child: Column(
+                          children: [
+                            TextButton.icon(onPressed: (){},label:Text("") ,icon: ClipRRect(borderRadius: BorderRadius.circular(150.0),
+                              child:Image.network('https://i.scdn.co/image/ab6761610000e5ebc7bb8481d97599dbab344a65',
+                                height: 130,
+                                width: 130,
 
+                              ),),),
+                            Text("Hidra",style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),)
+                          ],
+                        ),
+                      ),Container(
+                        width: 160,
+                        height: 160,
+                        child: Column(
+                          children: [
+                            TextButton.icon(onPressed: (){},label:Text("") ,icon: ClipRRect(borderRadius: BorderRadius.circular(150.0),
+                              child:Image.network('https://i.scdn.co/image/ab6761610000e5eb7156c4ba478e41acdec935a5',
+                                height: 130,
+                                width: 130,
+
+                              ),),),
+                            Text("Allame",style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),)
+                          ],
+                        ),
+                      ),Container(
+                        width: 160,
+                        height: 160,
+                        child: Column(
+                          children: [
+                            TextButton.icon(onPressed: (){},label:Text("") ,icon: ClipRRect(borderRadius: BorderRadius.circular(150.0),
+                              child:Image.network('https://i.scdn.co/image/ab6761610000e5eb966d3501bcd640ce98937f56',
+                                height: 130,
+                                width: 130,
+
+                              ),),),
+                            Text("Ceg",style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),)
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           )
@@ -291,9 +466,9 @@ class _HomePageState extends State<HomePage> {
 
           ),
       bottomNavigationBar: BottomNavigationBar(
-          unselectedItemColor: Colors.white30,
+          unselectedItemColor: Colors.white30.withOpacity(0.4),
           selectedItemColor: Colors.white,
-          backgroundColor: Colors.black87.withOpacity(0.8),
+          backgroundColor: Colors.black12.withOpacity(0.6),
           showUnselectedLabels: true,
           showSelectedLabels: true,
           items: const [
