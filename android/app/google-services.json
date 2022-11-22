@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1059181303838",
+    "project_id": "spotify-clone-arjin",
+    "storage_bucket": "spotify-clone-arjin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059181303838:android:fb1c47138146fa5189760f",
+        "android_client_info": {
+          "package_name": "com.example.spotify_clone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1059181303838-paqeg490knf51ig22n15imjffgjmd11o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_V-gudwDlkHaFzONceOfcGfDIp4y_XW4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1059181303838-paqeg490knf51ig22n15imjffgjmd11o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

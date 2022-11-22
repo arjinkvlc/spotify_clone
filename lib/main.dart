@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:spotify_clone/page/home_page.dart';
 import 'package:spotify_clone/page/login_page.dart';
-import 'package:navigator/navigator.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 

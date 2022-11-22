@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spotify_clone/page/home_page.dart';
+import 'package:spotify_clone/page/register_page.dart';
+import 'package:spotify_clone/service/auth.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -11,6 +13,9 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool isSwitched = false;
+  final TextEditingController _emailController=TextEditingController();
+  final TextEditingController _passwordController=TextEditingController();
+  AuthService _authService=AuthService();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,6 +54,7 @@ class _LoginPageState extends State<LoginPage> {
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8),
                         child: TextFormField(
+                          controller: _emailController,
                           style: const TextStyle(
                             color: Colors.white,
                           ),
@@ -78,6 +84,8 @@ class _LoginPageState extends State<LoginPage> {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 8),
                       child: TextFormField(
+                        controller: _passwordController,
+                        obscureText: true,
                         style: const TextStyle(
                           color: Colors.white,
                         ),
@@ -136,7 +144,11 @@ class _LoginPageState extends State<LoginPage> {
                       width: 250,
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));},
+                          _authService.signIn(_emailController.text, _passwordController.text).then((value) {
+                            return   Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
+                          });
+
+                        },
                         style: ButtonStyle(
                           backgroundColor:
                               const MaterialStatePropertyAll<Color>(
@@ -179,7 +191,7 @@ class _LoginPageState extends State<LoginPage> {
                       width: 250,
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
                         },
                         style: ButtonStyle(
                           backgroundColor:
@@ -215,7 +227,9 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ),
                         ),
-                        TextButton(onPressed: (){},child: const Text("SIGNUP",style: TextStyle(
+                        TextButton(onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const RegisterPage()));
+                        },child: const Text("SIGNUP",style: TextStyle(
                             decoration: TextDecoration.underline,
                             color: Colors.white)),)
                       ],
