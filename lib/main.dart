@@ -16,7 +16,6 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
         title: 'Spotify Clone',
         home: LoginPage(),
-        //home: HomePage()
     );
   }
 }
