@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:spotify_clone/page/register_page.dart';
 class HomePage extends StatefulWidget {
   const HomePage({Key? key, this.title}) : super(key: key);
   final String? title;
@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
       extendBody: true,
       appBar: AppBar(
         backgroundColor: Colors.black87,
-        title: const Text("İyi günler"),
+        title:  Text("İyi günler "+username.toString()),
         actions: [
           Padding(
               padding: const EdgeInsets.all(8.0),

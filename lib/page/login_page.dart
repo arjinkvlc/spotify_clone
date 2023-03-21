@@ -15,7 +15,7 @@ class _LoginPageState extends State<LoginPage> {
   bool isSwitched = false;
   final TextEditingController _emailController=TextEditingController();
   final TextEditingController _passwordController=TextEditingController();
-  AuthService _authService=AuthService();
+  final AuthService _authService=AuthService();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

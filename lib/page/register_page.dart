@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:spotify_clone/page/home_page.dart';
+import 'package:spotify_clone/page/login_page.dart';
 import 'package:spotify_clone/service/auth.dart';
-import 'package:spotify_clone/service/status_service.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'login_page.dart';
-
-
+late String username;
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
 
@@ -13,58 +12,29 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  final _usersRef = FirebaseFirestore.instance;
+  final AuthService _authService = AuthService();
   late GlobalKey<FormState> formKey;
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
-  late String username;
+
   late String email;
   late String password;
 
-  void _addUser(){
-    CollectionReference usersRef= FirebaseFirestore.instance.collection("users");
-    usersRef.add({
+  void _addUser() {
+    _usersRef.collection("users").add({
       'email': email,
       'password': password,
       'username': username,
-    })
-    ;
+    });
   }
-  Future<void> register(context) async {
-    if (formKey.currentState!.validate()) {
-      var response = await AuthService().register(_emailController.text, _passwordController.text, _usernameController.text);
-      if (response["type"] == "success") {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(response["message"]),
-            backgroundColor: Colors.green,
-          ),
-        );
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => const LoginPage())
-        );
-      }
-      else {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(response["message"]),
-            backgroundColor: Colors.red,
-          ),
-        );
-      }
-    }
-  }
-
-
-  final AuthService _authService = AuthService();
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
-        //backgroundColor: Colors.black54.withOpacity(.7),
         backgroundColor: const Color(0xFF1DB954).withOpacity(0.9),
         foregroundColor: Colors.black,
       ),
@@ -182,17 +152,17 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 SizedBox(
                   width: 250,
-                  child: ElevatedButton(
-                      onPressed: () async{
-                        _authService.register(_emailController.text, _passwordController.text,_usernameController.text);
-                        username=_usernameController.text;
-                        email=_emailController.text;
-                        password=_passwordController.text;
+                  child: TextButton(
+                      onPressed: () {
+                        username = _usernameController.text;
+                        email = _emailController.text;
+                        password = _passwordController.text;
                         _addUser();
-                        register(context);
-                        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                        ScaffoldMessenger.of(context)
+                            .showSnackBar(const SnackBar(
                           content: Text("Registered Successfully"),
                         ));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
                       },
                       style: const ButtonStyle(
                         backgroundColor:
